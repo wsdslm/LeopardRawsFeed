@@ -33,13 +33,14 @@ aniFeed.controller('idxCtrl', function ($scope, Feed) {
 aniFeed.controller('feedCtrl', function ($scope, $location, Feed, Auth) {
     // 是否安全验证
     Auth.isauth().then(function (result) {
-        if (result == false) {
+        if (true == result) {
+            getList();
+        } else {
             $location.path('/auth');
         }
     });
 
     $scope.title = '';
-    getList();
 
     function getList() {
         Feed.get().then(function (data) {
@@ -77,7 +78,7 @@ aniFeed.controller('feedCtrl', function ($scope, $location, Feed, Auth) {
 aniFeed.controller('authCtrl', function ($scope, $location, Auth) {
     // 是否安全验证
     Auth.isauth().then(function (result) {
-        if (result == true) {
+        if (true == result) {
             $location.path('/feed');
         }
     });
