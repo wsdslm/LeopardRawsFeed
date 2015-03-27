@@ -4,7 +4,7 @@
 var gulp = require('gulp'),
     clean = require('gulp-clean'),
     uglify = require('gulp-uglify'),
-    minify = require('gulp-minify'),
+    minify = require('gulp-minify-css'),
     rename = require('gulp-rename');
 var js_src = 'js',
     css_src = 'css',
